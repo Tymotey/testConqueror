@@ -20,6 +20,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link href="assets/css/style.css<?php echo get_version_link_params();?>" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="32x32">
 	</head>
 	<body>
         <div id="loader_content" class="hidden"><div id="loader_moving"></div></div>
@@ -107,7 +108,9 @@
                 <div class="inner_div">
                     <div id="links_div">
                         <div id="footer_logo" class="column">
-                            <img src="/assets/images/logo_white.png" alt="The Conqueror" title="The Conqueror" />
+                            <a href="#">
+                                <img src="/assets/images/logo_white.png" alt="The Conqueror" title="The Conqueror" />
+                            </a>
                         </div>
                         <div class="column">
                             <span class="footer_header">ABOUT</span>
@@ -134,10 +137,10 @@
                         </div>
                         <div class="column">
                             <span class="footer_header">THE CONQUEROR OFFERINGS</span>
-                            <div class="text">To read our privacy notice including our GDPR policy, please click here.</div>
+                            <div class="text">To read our privacy notice including our GDPR policy, please click <a href="#">here</a>.</div>
                             <div class="diviver"></div>
                             <span class="footer_header">TERMS OF SERVICE</span>
-                            <div class="text">To read our privacy notice including our GDPR policy, please click here.</div>
+                            <div class="text">To read our privacy notice including our GDPR policy, please click <a href="#">here</a>.</div>
                             <div class="diviver"></div>
                             <span class="footer_header">download the app</span>
                             <div class="text">Download app from from market.</div>

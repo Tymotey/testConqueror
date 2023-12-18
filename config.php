@@ -1,5 +1,5 @@
 <?php
-	define( 'ENABLE_DEBUG', true );
+	define( 'ENABLE_DEBUG', false );
 	if(ENABLE_DEBUG){
 		ini_set('display_errors', 1);
 		ini_set('display_startup_errors', 1);
@@ -22,9 +22,9 @@
         define( 'DB_CHARSET', 'utf8' );
     }
     else if( strpos(SITE_URL, 'bondas.ro') ){
-        define( 'DB_NAME', 'theconqueror' );
-        define( 'DB_USER', 'root' );
-        define( 'DB_PASSWORD', '' );
+        define( 'DB_NAME', 'bondasro_theconqueror' );
+        define( 'DB_USER', 'bondasro_theconqueror' );
+        define( 'DB_PASSWORD', 'theconqueror' );
         define( 'DB_HOST', 'localhost' );
         define( 'DB_CHARSET', 'utf8' );
     }

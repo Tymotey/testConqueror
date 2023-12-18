@@ -6,6 +6,16 @@ function hideLoader() {
     $("#loader_content").addClass("hidden");
 }
 
+function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, timeout);
+    };
+}
+
 const removeFromCart = (id) => {
     let items = sessionStorage.getItem("conquerorItems");
     items = JSON.parse(items);
@@ -54,6 +64,7 @@ const cartHtml = () => {
     let items = sessionStorage.getItem("conquerorItems");
     if (null === items) {
         $("#main_cart_details_data").html("No items added to cart");
+        $("#main_total_text").hide();
     } else {
         showLoader();
         $.post(
@@ -93,20 +104,27 @@ jQuery(document).ready(function ($) {
         checkoutHtml();
     }
 
-    $("body").on("change", "#checkout_list td.qty input", (e) => {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
+    $("body").on(
+        "change",
+        "#checkout_list td.qty input",
+        debounce((e) => {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
 
-        let element = $(e.target);
-        let value = element.val();
-        let id = element.closest("tr").attr("attr-id");
-        if (value * 1 === 0) {
-            $(e.target).closest("tr").find("td.delete svg").trigger("click");
-        } else {
-            changeItemCart(id, value);
-        }
-        checkoutHtml();
-    });
+            let element = $(e.target);
+            let value = element.val();
+            let id = element.closest("tr").attr("attr-id");
+            if (value * 1 === 0) {
+                $(e.target)
+                    .closest("tr")
+                    .find("td.delete svg")
+                    .trigger("click");
+            } else {
+                changeItemCart(id, value);
+            }
+            checkoutHtml();
+        })
+    );
 
     $("body").on("click", "#checkout_list td.delete svg", (e) => {
         e.stopPropagation();
@@ -168,22 +186,26 @@ jQuery(document).ready(function ($) {
     });
 
     // Cart popup
-    $("body").on("change", "#main_cart_details .main_cart_input", (e) => {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
+    $("body").on(
+        "change",
+        "#main_cart_details .main_cart_input",
+        debounce((e) => {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
 
-        let value = e.target.value;
-        let id = $(e.target).closest("li").attr("attr-id");
-        if (value * 1 === 0) {
-            $(e.target)
-                .closest("li")
-                .find(".main_cart_delete")
-                .trigger("click");
-        } else {
-            changeItemCart(id, value);
-        }
-        cartHtml();
-    });
+            let value = e.target.value;
+            let id = $(e.target).closest("li").attr("attr-id");
+            if (value * 1 === 0) {
+                $(e.target)
+                    .closest("li")
+                    .find(".main_cart_delete")
+                    .trigger("click");
+            } else {
+                changeItemCart(id, value);
+            }
+            cartHtml();
+        })
+    );
 
     $("body").on("click", "#main_cart_details .main_cart_delete", (e) => {
         e.stopPropagation();
