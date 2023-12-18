@@ -253,6 +253,7 @@ jQuery(document).ready(function ($) {
     });
 
     $(window).on("click", function (e) {
+        // Little bit messy, but for now is ok
         let element = $(e.target);
         if (
             element.attr("id") ||
