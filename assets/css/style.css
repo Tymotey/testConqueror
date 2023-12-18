@@ -23,7 +23,7 @@ input, select{ appearance: none; }
 input:hover, select:hover{ border: 1px solid #BDBDBD; }
 input:focus, select:focus { outline:0px none transparent; }
 
-html, body{ font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-smooth: never; }
+html, body{ font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 400;  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 body{ background-color: #FFFFFF; color: #000000; }
 
 /* Scrollbar */ 
