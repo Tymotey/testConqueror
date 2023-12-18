@@ -10,8 +10,7 @@
 ?>
     <div class="list_toolbar">
         <div class="sort_div">
-            <span class="label">Sort by:</span>
-            <select class="sort_select">
+            <span class="label">Sort by:</span><select class="sort_select">
                 <option value="by-popularity-asc">Popular Asc</option>
                 <option value="by-popularity-desc" selected>Popular Desc</option>
                 <option value="by-name-asc">Name Asc</option>

@@ -104,9 +104,10 @@
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Item Price</th>
                 <th>Qty</th>
-                <th>Delete</th>
                 <th>Subtotal</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>';
@@ -124,12 +125,12 @@
             }
         }
         else{
-            $return_html .= '<tr><td colspan="4">No items added to cart</td></tr>';
+            $return_html .= '<tr><td colspan="5">No items added to cart</td></tr>';
         }
         $return_html .= '</tbody>
         <tfoot>
             <tr class="total_tr">
-                <td colspan="3" class="text-right">Total:</td>
+                <td colspan="4" class="text-right">Total:</td>
                 <td class="text-center">' . $total . 'LEI</td>
             </tr>
         </tfoot>
@@ -181,13 +182,14 @@
                 <div class="title_div">' . $item_db_data['data']['name'] . '</div>
                 <img src="' . SITE_IMAGES_DIR . $item_db_data['data']['image'] . '" alt="' . $item_db_data['data']['name'] . '" title="' . $item_db_data['data']['name'] . '" />
             </td>
+            <td class="subtotal"><span class="item_price_text">' . (int) $item_db_data['data']['price'] . '</span>LEI</td>
             <td class="qty">
                 <input type="number" value="' . $item->qty . '" step="1" min="0" class="main_cart_input" />
             </td>
+            <td class="subtotal"><span class="subtotal_text">' . $total . '</span>LEI</td>
             <td class="delete" title="Remove ' . $item_db_data['data']['name'] . '">
                 <svg class="checkout_delete" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
             </td>
-            <td class="subtotal"><span class="subtotal_text">' . $total . '</span>LEI</td>
         </tr>';
 
         return $return_html;
