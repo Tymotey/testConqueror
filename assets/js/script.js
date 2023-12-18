@@ -251,4 +251,14 @@ jQuery(document).ready(function ($) {
                 hideLoader();
             });
     });
+
+    $(window).on("click", function (e) {
+        let element = $(e.target);
+        if (
+            element.attr("id") ||
+            element.closest("#main_cart_details").length === 0
+        ) {
+            $("#main_cart_details").hide();
+        }
+    });
 });

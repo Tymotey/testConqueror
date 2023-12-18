@@ -2,8 +2,8 @@
 AuthType Basic
 AuthName "Restricted Content. User & password: theconqueror"
 AuthBasicProvider file
-# AuthUserFile "C:\laragon\www\TheConqueror\.htpasswd"
-AuthUserFile ".htpasswd"
+AuthUserFile "C:\laragon\www\TheConqueror\.htpasswd"
+# AuthUserFile ".htpasswd"
 Require valid-user
 
 # Disable server folder listing

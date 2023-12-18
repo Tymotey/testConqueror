@@ -23,8 +23,11 @@
         <link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="32x32">
 	</head>
 	<body>
+        <!-- Loader -->
         <div id="loader_content" class="hidden"><div id="loader_moving"></div></div>
+        <!-- Page Wrapper -->
         <div id="page_wrapper">
+            <!-- Header -->
             <header role="header">
                 <div id="header_line_1">
                     <div class="inner_div">
@@ -33,11 +36,13 @@
                 </div>
                 <div id="header_line_2">
                     <div class="inner_div">
+                        <!-- Logo -->
                         <div id="logo">
                             <a href="<?php echo SITE_URL; ?>">
                                 <img src="/assets/images/logo.png" alt="The Conqueror" title="The Conqueror" />
                             </a>
                         </div>
+                        <!-- Main menu wrapper -->
                         <div id="main_menu_wrapper">
                             <ul id="main_menu">
                                 <li class="show_dropdown">
@@ -78,20 +83,23 @@
                             </ul>
                             <div id="main_cart_details">
                                 <div id="main_cart_details_data"></div>
-                                <div id="main_total_text">Total: <span id="main_total"></span>LEI</div> <!-- TODO: total NOT updating when cart is changing -->
+                                <div id="main_total_text">Total: <span id="main_total"></span>LEI</div>
                                 <button id="go_to_summary">Go to summary</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+            <!-- Content div wrapper -->
             <main role="contentinfo">
                 <div class="inner_div">
     <?php
     }
         if (file_exists('parts/page_' . $page . '.php')) {
+            // Load page by id from link
             include_once('parts/page_' . $page . '.php');
         } else {
+            // If no page found load 404 page
             include_once('parts/page_404.php');
         }
 
@@ -99,6 +107,7 @@
 ?>
                 </div>
             </main>
+            <!-- Footer -->
             <footer role="footer">
                 <div class="subscribe">
                     <div class="inner_div">
