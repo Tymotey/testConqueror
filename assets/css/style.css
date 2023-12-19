@@ -99,7 +99,7 @@ main{ padding-bottom: 60px; }
 
 #challenges_list{ margin-top: 20px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 21px; }
 #challenges_list .challenge_data{ position: relative; border: 1px solid #D4D4D4; border-radius: 5px; margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; align-content: space-between; }
-#challenges_list .challenge_data .is_new{ position: absolute; z-index: 20; left: 10px; top: 0px; width: 36px; height: 40px; background-image: url('../images/new.png'); font-weight: 600; text-align: center; line-height: 30px; }
+#challenges_list .challenge_data .is_new{ position: absolute; z-index: 20; left: 10px; top: -1px; width: 36px; height: 40px; background-image: url('../images/new.png'); font-weight: 600; text-align: center; line-height: 30px; }
 
 /* Challenges list */
 #challenges_list .challenge_data .div_top{ width: 100%; position: relative; text-align: center; }
