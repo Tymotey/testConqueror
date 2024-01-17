@@ -1,3 +1,9 @@
+# Purpose of test:
+
+Create simple server in PHP with database and show a list of items from this database.
+Add frontend functionality that will allow clients to add items to cart.
+After items are added to cart, show a checkout page with total calculations.
+
 # Deploy:
 
 -   clone GIT from link [https://github.com/Tymotey/testConqueror](https://github.com/Tymotey/testConqueror)
