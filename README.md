@@ -3,6 +3,7 @@
 Create simple server in PHP with database and show a list of items from this database.
 Add frontend functionality that will allow clients to add items to cart.
 After items are added to cart, show a checkout page with total calculations.
+Must be quick and optimized for high traffic.
 
 # Deploy:
 
